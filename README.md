@@ -15,3 +15,7 @@ and your node modules will be installed..
 
 for backed you need to run "npm start" commond to lift the backed, and 
 for front end you need to run " ng serve" commond to run frontend.
+
+For data Base you need to create databse according to mentioned in backend in . env file.
+
+then create tables according to the mentioned in DataBase-queries file.
