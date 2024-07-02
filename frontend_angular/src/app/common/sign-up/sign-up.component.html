@@ -1,0 +1,159 @@
+<!-- <p>sign-up works!</p>
+
+
+<div class="col-lg-1">
+<form class="custom-centered" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+
+  
+  <label for="name">Name</label>
+    <input 
+        type="text"
+        id="name"
+        class="form-control"
+        formControlName="name"
+    />
+
+    <span
+    *ngIf="
+      !signupForm.get('name').valid && signupForm.get('name').touched
+    "
+    class="help-block"
+    >Please enter valid Username</span
+  >
+
+<br><br>
+
+
+  <label for="email">Email</label>
+    <input 
+        type="email"
+        id="email"
+        class="form-control"
+        formControlName="email"
+    />
+
+    <span
+    *ngIf="
+      !signupForm.get('email').valid && signupForm.get('email').touched
+    "
+    class="help-block"
+    >Please enter valid Email</span
+  >
+
+
+    <br /><br>
+
+
+  <label for="password">Password</label>
+     <input 
+        type="password"
+        id="password"
+        class="form-control"
+    
+        formControlName="password"
+    />
+
+    <span
+    *ngIf="
+      !signupForm.get('password').valid && signupForm.get('password').touched
+    "
+    class="help-block"
+    >Please enter valid Password</span
+  >
+<br><br>
+
+      <button type="submit" class="btn btn-success">Sign Up</button>
+
+    
+  
+</form>
+</div> -->
+
+
+<div class="container-fluid h-100 bg-light text-dark">
+  <div class="row justify-content-center align-items-center">
+    <h1>Register yourself</h1>    
+  </div>
+  <hr/>
+  <div class="row justify-content-center align-items-center h-100">
+    <div class="col col-sm-6 col-md-6 col-lg-4 col-xl-3">
+
+      <form class="custom-centered" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+       
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input 
+              type="text"
+              id="name"
+              class="form-control"
+              formControlName="name"
+          />
+      
+          <span
+          *ngIf="
+            !signupForm.get('name').valid && signupForm.get('name').touched
+          "
+          class="help-block"
+          >Please enter valid Username</span
+        >
+        </div>
+
+        <br><br>
+
+        <div class="form-group">
+        <label for="email">Email</label>
+        <input 
+            type="email"
+            id="email"
+            class="form-control"
+            formControlName="email"
+        />
+    
+        <span
+        *ngIf="
+          !signupForm.get('email').valid && signupForm.get('email').touched
+        "
+        class="help-block"
+        >Please enter valid Email</span
+      >
+      </div>
+    
+      <br><br>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input 
+             type="password"
+             id="password"
+             class="form-control"
+         
+             formControlName="password"
+         />
+     
+         <span
+         *ngIf="
+           !signupForm.get('password').valid && signupForm.get('password').touched
+         "
+         class="help-block"
+         >Please enter valid Password</span
+       >
+        </div>
+
+       <br><br>
+
+        <div class="form-group">
+          <div class="container">
+            <div class="row">
+              
+              <button type="submit" class="btn btn-primary">Sign Up</button>
+             
+            </div>
+          </div>
+        </div>
+
+      
+
+      </form>
+    </div>
+  </div>
+</div>

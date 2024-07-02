@@ -1,0 +1,56 @@
+<br><button class="btn btn-info float-left" (click)="back()"> ◀ Go
+    back</button><br><br>
+    <h1><strong>{{quizName}}</strong></h1>
+    <h2><strong>Highscore</strong></h2><br>
+<details>
+    <summary class="bg-info text-white"><strong>Top scorers Of all time</strong></summary>
+    <div>
+        <ng-template [ngIf]="highScore.length" [ngIfElse]="emptyList1">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th class="text-center">User name</th>
+                        <th class="text-center">Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let h of highScore; index as i">
+                        <td><strong>{{i+1}}</strong></td>
+                        <td class="text-center"><strong>{{h.name}}</strong></td>
+                        <td class="text-center"><strong>{{h.gscore}}</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-template>
+        <ng-template #emptyList1>
+            <h2 class="text-center" [ngStyle]="{'color':'red'}">Sorry, No one has played the game yet</h2>
+        </ng-template>
+    </div>
+</details><br><br>
+<!-- <details>
+    <summary class="bg-info text-white"><strong>Top scorers Of The day</strong></summary>
+    <div>
+        <ng-template [ngIf]="daily.length" [ngIfElse]="emptyList2">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th class="text-center">User name</th>
+                        <th class="text-center">Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let d of daily;index as i">
+                        <td><strong>{{i+1}}</strong></td>
+                        <td class="text-center"><strong>{{d.name}}</strong></td>
+                        <td class="text-center"><strong>{{d.score}}</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-template>
+        <ng-template #emptyList2>
+            <h2 class="text-center" [ngStyle]="{'color':'red'}">Today, No one has played the game</h2>
+        </ng-template>
+    </div>
+</details> -->

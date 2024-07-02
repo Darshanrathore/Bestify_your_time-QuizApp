@@ -1,0 +1,33 @@
+
+<br><button class="btn btn-info float-left" (click)="back()"> ◀ Go back</button><br><br>
+<div class="gameSpace">
+    <div class="container">
+
+        <span class="score ml-auto h4"><br> 🏆 Highscore : {{mouseHighscore[0].gscore}} ({{mouseHighscore[0].name}})</span>
+
+        <div class="row">
+            <div class="col">
+                <span class="timer ml-auto h4"><br> ⏱ Timer: {{ gameTime}}</span>
+            </div>
+            <div class="col">
+                <span class="score ml-auto h4"><br> 🖱 Your Score:{{score}}</span>
+            </div>
+           
+           <!-- <span class="timer ml-auto h4"> ⏱ Timer: {{ gameTime}}</span> <span class="score ml-auto h4">Your Score:{{score}}</span> -->
+           <span class="score ml-auto h4"><br>Click as many times as you can in 10 secs</span>
+            <div class="col-lg-12 col-md-12 col-12 mySpace text-center h3" (click)="onClick()"></div>
+        </div>
+    </div>
+</div>
+
+<hr>
+<br>
+
+<button class="btn btn-success" (click)="submitScore()">Submit Score</button>
+
+<br>
+<br>
+<br>
+<br>
+
+

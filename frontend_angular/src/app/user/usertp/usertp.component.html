@@ -1,0 +1,210 @@
+<br>
+<br>
+&nbsp;&nbsp;<button class="btn btn-info back"  (click)="goBack()"> ◀ Back to Quiz List</button><br>
+
+<div class="container mt-5">
+  <div class="row d-flex justify-content-center" style="border: 2px solid blue;">
+    <div class="col-md-8 border p-4">
+      <div>
+        <div class="card-body">
+          <div class="h5 card-text float-right font-weight-bold">
+            {{ quizName }}
+          </div>
+          <h5>
+            (<span id="number">{{ questionCount }}</span> of
+            {{ totalQuestions }})
+          </h5>
+          
+          <div class=" h6 card-text float-right font-weight-bold text-center">Total Time :{{toatalTime}}
+            Minutes
+            <br> <h1>⏱</h1>(<span id="timer">{{minutes}} : {{seconds}}</span>)</div>
+    </div>
+        </div>
+       
+  
+        <!-- <div id="main" *ngFor="let q of question; let indexOfQuestion = index">
+          <div *ngIf="indexOfQuestion == questionCount - 1">
+            <div class="card-body">
+              <div class="h5 card-text font-weight-bold" id="question">
+                {{ q.quesTitle }}
+              </div>
+            </div>
+            <div
+              class="col-md-12 p-4"
+              id="options"
+              *ngFor="let o of q.options; let indexOfOption = index"
+            >
+              <button
+                class="btn btn-primary"
+                [ngClass]="
+                  !submitted
+                    ? ''
+                    : q.answer == indexOfOption + 1
+                    ? 'btn-success'
+                    : 'btn-danger'
+                "
+                (click)="clicked(indexOfOption, q.answer, q.marks)"
+                id="{{ indexOfOption }}"
+                [disabled]="disable"
+              >
+                {{ o }}
+              </button>
+            </div>
+          
+            <div class="row">
+              <div class="col">
+                <button
+                class="btn btn-warning float-left  m-2"
+                id="next"
+                (click)="pause()"
+                *ngIf="!(questionCount === totalQuestions)"
+              >
+                ⏯ Pause
+              </button>
+              </div>
+              <div class="col">
+                <button
+                class="btn btn-primary float-right bg-info m-2"
+                id="next"
+                (click)="next()"
+                *ngIf="!(questionCount === totalQuestions)"
+              >
+               ⏭ Next
+              </button>
+              </div>
+              <div class="col">
+                <button
+                class="btn btn-success mx-auto  m-2"
+                id="finish"
+                (click)="finish()"
+              >
+                ☑ Finish
+              </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="Result" class="text-center" *ngIf="showResult">
+        <div class="h5 card-text text-center font-weight-bold display-4">
+          {{ quizName }}
+        </div>
+        <h3 class="mt-5 display-3">
+          Marks: {{ marks }}<span id="marks"></span>/{{ totalMarks }}
+
+        </h3>
+        <h3 class="mt-4">
+          <span id="correct_answer">{{ correctAnswer }}</span> Correct out of
+          {{ totalQuestions }}
+        </h3>
+        <h3 class="mt-4">
+          Result :
+          <span id="percentage"
+            >{{ (marks / totalMarks) * 100 | number: "1.2-2" }} %</span
+          >
+        </h3>
+      </div> -->
+    </div>
+  </div>
+
+
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      
+      <div id="main" *ngFor="let q of question; let indexOfQuestion = index">
+        <div *ngIf="indexOfQuestion == questionCount - 1">
+          <div class="card-body">
+            <div class="h5 card-text font-weight-bold" id="question">
+              {{ q.quesTitle }}
+            </div>
+            <hr>
+          </div>
+          <div
+            class="col-md-12 p-4"
+            id="options"
+            *ngFor="let o of q.options; let indexOfOption = index"
+          >
+            <button
+              class="btn btn-primary"
+              [ngClass]="
+                !submitted
+                  ? ''
+                  : q.answer == indexOfOption + 1
+                  ? 'btn-success'
+                  : 'btn-danger'
+              "
+              (click)="clicked(indexOfOption, q.answer, q.marks)"
+              id="{{ indexOfOption }}"
+              [disabled]="disable"
+            >
+              {{ o }}
+            </button>
+           
+          </div>
+          <hr>
+        
+          <div class="row">
+            <div class="col">
+              <button
+              class="btn btn-warning float-left  m-2"
+              id="next"
+              (click)="pause()"
+              *ngIf="!(questionCount === totalQuestions)"
+            >
+              ⏯ Pause
+            </button>
+            </div>
+            <div class="col">
+              <button
+              class="btn btn-primary float-right bg-info m-2"
+              id="next"
+              (click)="next()"
+              *ngIf="!(questionCount === totalQuestions)"
+            >
+             ⏭ Next
+            </button>
+            </div>
+            <div class="col">
+              <button
+              class="btn btn-success mx-auto  m-2"
+              id="finish"
+              (click)="finish()"
+            >
+              ☑ Finish
+            </button>
+            </div>
+          </div>
+          <hr>
+        </div>
+     
+    </div>
+      
+    </div>
+    <div class="col" style="border: 6px solid blue;">
+    
+      <div id="Result" class="text-center" *ngIf="showResult">
+        <div class="h5 card-text text-center font-weight-bold display-4">
+          {{ quizName }}
+        </div>
+        <h3 class="mt-5 display-3">
+          Marks: {{ marks }}<span id="marks"></span>/{{ totalMarks }}
+
+        </h3>
+        <h3 class="mt-4">
+          <span id="correct_answer">{{ correctAnswer }}</span> Correct out of
+          {{ totalQuestions }}
+        </h3>
+        <h3 class="mt-4">
+          Result :
+          <span id="percentage"
+            >{{ (marks / totalMarks) * 100 | number: "1.2-2" }} %</span
+          >
+        </h3>
+      </div>
+
+    </div>
+  </div>
+  
+  <hr>

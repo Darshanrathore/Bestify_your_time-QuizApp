@@ -1,0 +1,27 @@
+
+<br><button class="btn btn-info float-left" (click)="back()"> ◀ Go
+    back</button><br><br>
+    <h1><strong>{{quizName}}</strong></h1>
+    <h3><strong>Users opted for Game</strong></h3><br>
+<ng-template [ngIf]="gamers.length" [ngIfElse]="emptyList">
+    <div class="justify-content-center d-flex">
+        <table class="table table-success table-striped table-hover ">
+            <thead>
+                <tr>
+                    <th class="text-center">Sr. No.</th>
+                    <th class="text-center">User Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let g of gamers; index as i">
+                    <td class="text-center"><strong>{{i+1}}</strong></td>
+                    <td class="text-center"><strong>{{g.name}}</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+   
+</ng-template>
+<ng-template #emptyList>
+    <h2 class="text-center" [ngStyle]="{'color':'red'}">Sorry, No one  played the game yet</h2>
+</ng-template>

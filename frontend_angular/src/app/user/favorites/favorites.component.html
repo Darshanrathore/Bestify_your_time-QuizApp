@@ -1,0 +1,45 @@
+<!-- <p>favorites works!</p> -->
+<br>
+<br>
+<h4 style="float: left;">&nbsp;&nbsp;&nbsp;&nbsp;Your Favorite Quizes, {{name}}</h4>
+<br>
+<br>
+<div class="center" style="width: 80%">
+
+<h5 class="font-weight-bold text-center"
+  [ngStyle]="{'color' : message === 'Quiz removed from favorite' ? 'green' : 'red'}">{{message}}</h5>
+<ng-template [ngIf]="favourites.length" [ngIfElse]="emptyList">
+    <br>
+    <br>
+  <table class="table table-danger table-hover">
+    <thead>
+      <tr>
+        <th>Quiz name</th>
+        <th class="text-center">Remove from favourites</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let fav of favourites">
+        <td><strong>{{fav.quizName}}</strong></td>
+        <td class="text-center"><button class="btn btn-danger" (click)="removeFromFav(fav.qid, fav.quizName)">Remove ⚠</button></td>
+      </tr>
+    </tbody>
+  </table>
+</ng-template>
+<ng-template #emptyList>
+  <h2 class="text-center" [ngStyle]="{'color':'red'}">Sorry, favorite list is empty</h2>
+</ng-template>
+
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

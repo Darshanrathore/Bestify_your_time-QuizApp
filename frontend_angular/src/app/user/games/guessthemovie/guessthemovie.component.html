@@ -1,0 +1,55 @@
+<br><button class="btn btn-info float-left" (click)="back()"> ◀ Go back</button><br><br>
+<div class="container ">
+
+    <span class="card bg-secondary text-white"><br> <h2>🏆 Highscore : {{movieHighscore[0].gscore}} ({{movieHighscore[0].name}})</h2></span>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card bg-dark text-white">
+                <div class="card-header text-center">
+                    <div class="display-3">Welcome to Guess The Movie 🎬</div>
+                </div>
+                <div class="card-body text-center">
+                    <div class="h3"><strong>Instructions: </strong>Yoh have to guess the name of the movie. All the letters are hidden except the vowels in the name. 
+                        You have <strong>5</strong> guesses.</div>
+                        <div class="h4">No of tries Left: {{noOfTries}}</div>
+                        <div class="h4">Your score : {{guessedMovies}}</div>
+                    <div class="h1 text-center">
+                        <span *ngFor="let hm of hiddenMovie" >{{hm}} &nbsp;</span>
+                    </div>
+                </div>
+                <ng-container *ngIf="!showResult">
+                    <div class="card-footer justify-content-center d-flex">
+                        <form class="form">
+                            <div class="col-md-12 text-center">
+                                <input type="text" maxlength="1" class="form-control" name="inputLetter" [(ngModel)]="inputLetter" required>
+                            </div>
+                            <div class="col-md-12 text-center">
+                            <button (click)="tryIt()" class="btn btn-primary m-2">Try It 🤔 </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-12 text-center">
+                        <div class="h3" >You have Guessed: <span *ngFor="let g of gussedLetters" >{{g}} &nbsp;</span></div>
+                    </div>
+                </ng-container>
+                <ng-container *ngIf="showResult">
+                    <div class="display-3 text-center">The movie Name is {{currentMovie}}</div>
+                </ng-container>
+                <div class="text-center" *ngIf="!gameStart">
+                    <button (click)="playAgain()" class="btn btn-info m-2">Play Again</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<button class="btn btn-success" (click)="submitScore()">  Submit Score</button>
+
+<br>
+<br>
+<br>
+<br>
+<br>

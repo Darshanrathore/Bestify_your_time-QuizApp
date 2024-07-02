@@ -1,0 +1,45 @@
+<br>
+<br>
+ 
+<div class="text-center">
+    <h4>
+      Search quiz :
+      <input
+        class="search"
+        name="search"
+        type="text"
+        [(ngModel)]="searchText"
+      /><br />
+    </h4>
+  </div>
+ 
+<br>
+<br>
+ 
+<div class="container">
+  <div class="row">
+    <div class="col" *ngFor="let q of quizes | filter:searchText" >
+      <div class="card lt" style="width: 18rem; border: 1px solid black;" >
+ 
+          <img src="assets/images/q.jpg" class="card-img-top" alt="photo">
+      
+          <div class="card-body">
+            <h5 class="card-title">{{q.quizName}}</h5>
+            <p class="card-text"></p>
+            <br>
+            <button class="btn btn-warning" (click)="addToFav(q.qid,q.quizName)">Favorite ❤</button>
+          </div>
+        </div>
+        <br>
+        <br>
+    </div>
+  </div>
+</div>
+ 
+<br>
+<br>
+<br>
+<br>
+
+
+  

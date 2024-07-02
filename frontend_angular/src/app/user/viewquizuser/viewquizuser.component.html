@@ -1,0 +1,52 @@
+
+<br>
+<br>
+
+&nbsp;&nbsp;<button class="btn btn-info back"  (click)="goBack()"> ◀ Back to Categories</button><br>
+<h5 class="font-weight-bold text-center"
+  [ngStyle]="{'color' : message === 'Quiz deleted successfully' ? 'green' : 'red'}">{{message}}</h5><br>
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Quiz name</th>
+      <th class="text-right">Duration</th>
+      
+    
+      <th class="text-center">Leaderboard</th>
+      <th class="text-right">Play</th>
+      
+     
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let q of QuizesByCategory">
+      <td><strong>{{q.quizName}}</strong></td>
+      <td><strong>{{q.time}} min.</strong></td>
+     
+      
+      <td class="text-center"><a (click)="Leaderboard(q.catId,q.qid)" class="btn btn-primary"> Highscores 🏆<em
+            class="fas fa-chart-bar"></em></a></td>
+            <td class="text-center">
+                <a (click)="playQuiz(q.qid, q.catId)" class="btn btn-success"
+                  >Play 🎯 </a>
+              </td>
+            
+      
+
+                
+    </tr>
+  </tbody>
+</table>
+
+<hr>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

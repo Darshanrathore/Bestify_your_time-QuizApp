@@ -1,0 +1,87 @@
+<!-- <p>adminprofile works!</p> -->
+<div class="container mycontainer">
+    <div class="row d-flex text-center">
+        <div class="col-md-12">
+            <div class="row z-depth-3">
+                <div class="col-sm-4 bg-success rounded-left">
+                    <div class="card-block text-center text-white">
+                        <i class="fas fa-user fa-7x mt-5"></i>
+                        <img src="assets/images/admin1.png" class="card-img-top" alt="..." height="100%">
+                        <h2 class="font-weight-bold mt-4">Admin</h2>
+                       
+                    </div>
+                </div>
+                
+                <div class="col-sm-8 bg-white  rounded-right">
+                    <h3 class="mt-3 text-center justify-content-center text-success bg-warning">Admin Profile</h3>
+                   
+                    <hr class="bg-primary mt-10 w-25" />
+                    <form [formGroup]="adminProfile" >
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <!-- <p class="font-weight-bold">Admin-ID</p> -->
+                            <h2>Admin-ID</h2>
+                            <input type="text" class="form-control"  [readonly]="enableFormField" formControlName="name" [(ngModel)]="id"/>
+                          
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- <p class="font-weight-bold">Name</p> -->
+                            <h2>Name</h2>
+                            <input type="email" class="form-control" [readonly]="enableFormField" formControlName="email" [(ngModel)]="name"/>
+                           
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6 offset-md-3 text-center">
+                            <br />
+                            <!-- <p class="font-weight-bold">Email</p> -->
+                            <h2>Email</h2>
+                            <input type="tel" class="form-control" [readonly]="enableFormField" formControlName="phone" [(ngModel)]="Email"/>
+                           
+                        </div>
+                    </div>
+                   
+                  
+                </form>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+<!-- <div class="container" style="border: 1px solid black;">
+    <div class="row">
+      <div class="col">
+        <img src="assets/images/admin1.png" class="card-img-top" alt="..." height="100%">
+      </div>
+      <div class="col">
+        <div class="col-sm-8 bg-white  rounded-right">
+            <h3 class="mt-3 text-center justify-content-center">Admin Profile</h3>
+           
+            <hr class="bg-primary mt-10 w-25" />
+            <form [formGroup]="adminProfile" >
+            <div class="row">
+                <div class="col-sm-6">
+                    <p class="font-weight-bold">ID</p>
+                    <input type="text" class="form-control"  [readonly]="enableFormField" formControlName="name" [(ngModel)]="id"/>
+                  
+                </div>
+                <div class="col-sm-6">
+                    <p class="font-weight-bold">Name</p>
+                    <input type="email" class="form-control" [readonly]="enableFormField" formControlName="email" [(ngModel)]="name"/>
+                   
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-6 offset-md-3 text-center">
+                    <br />
+                    <p class="font-weight-bold">Email</p>
+                    <input type="tel" class="form-control" [readonly]="enableFormField" formControlName="phone" [(ngModel)]="Email"/>
+                   
+                </div>
+            </div>
+      
+  -->

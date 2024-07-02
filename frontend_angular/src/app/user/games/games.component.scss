@@ -1,0 +1,33 @@
+.main-app {
+    margin: 0 auto;
+    max-width: 300px;
+    color: #34495e;
+  }
+  .card-header{
+    background:linear-gradient(to top right, black, blue);
+}
+
+.lt{
+
+    // width: 100%;
+    // height: 200px;
+    background: rgb(8, 8, 5);
+    // border: medium none;
+    // padding: 50px!important;
+    // border-radius: 3px;
+    // transition: 0.3s;
+    color: rgb(127, 127, 209);
+
+    // background: url('../../../assets/images/lt4.png');
+
+    border: medium none;
+}
+.lt:hover{
+    box-shadow: 0px 0px 10px 20px rgba(241, 39, 3, 0.3);
+    transform: translateY(-20px);
+    color: white;
+    background:rgb(43, 34, 128);
+}
+// .lt h4{
+//     color: red;
+// }

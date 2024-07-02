@@ -1,0 +1,112 @@
+<div class="container d-flex justify-content-center">
+    <div class="col-md-7">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="text-center">Add Question</h3>
+            </div>
+            <h5 class="font-weight-bold text-center" [ngStyle]="{'color' : message === 'Question added successfully' ? 'green' : 'red'}">{{message}}</h5>
+            <div class="card-body">
+                <form action="" [formGroup]="addQuestionForm" (ngSubmit)="questionsAdded()">
+                    <div class="row">
+                        <div class="col">
+                            <label for="question" class="mr-sm-2">Question &nbsp;&nbsp;
+                                <small id="emailHelp" class="form-text text-danger"
+                                    *ngIf="!addQuestionForm.get('question')?.valid">*Question must contain atleast 3
+                                    characters</small>
+                            </label>
+                            <input type="text" class="form-control mb-2 mr-sm-2" id="question"
+                                placeholder="Enter question" formControlName="question" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="option-1" class="mr-sm-2">Option 1 &nbsp;&nbsp;
+                                <small id="emailHelp" class="form-text text-danger"
+                                    *ngIf="!addQuestionForm.get('option-1')?.valid">*Option-1 must contain atleast 3
+                                    characters</small>
+                            </label>
+                            <input type="text" class="form-control mb-2 mr-sm-2" id="option-1"
+                                placeholder="Enter option 1" formControlName="option-1" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="option-2" class="mr-sm-2">Option 2 &nbsp;&nbsp;
+                                <small id="emailHelp" class="form-text text-danger"
+                                    *ngIf="!addQuestionForm.get('option-2')?.valid">*Option-2 must contain atleast 3
+                                    characters</small>
+                            </label>
+                            <input type="text" class="form-control mb-2 mr-sm-2" id="option-2"
+                                placeholder="Enter option 2" formControlName="option-2" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="option-3" class="mr-sm-2">Option 3 &nbsp;&nbsp;
+                                <small id="emailHelp" class="form-text text-danger"
+                                    *ngIf="!addQuestionForm.get('option-3')?.valid">*Option-3 must contain atleast 3
+                                    characters</small>
+                            </label>
+                            <input type="text" class="form-control mb-2 mr-sm-2" id="option-3"
+                                placeholder="Enter option 3" formControlName="option-3" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="option-4" class="mr-sm-2">Option 4 &nbsp;&nbsp;
+                                <small id="emailHelp" class="form-text text-danger"
+                                    *ngIf="!addQuestionForm.get('option-4')?.valid">*Option-4 must contain atleast 3
+                                    characters</small>
+                            </label>
+                            <input type="text" class="form-control mb-2 mr-sm-2" id="option-4"
+                                placeholder="Enter option 4" formControlName="option-4" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="answer" class="mr-sm-2">Correct Answer &nbsp;&nbsp;
+                                <small id="emailHelp" class="form-text text-danger"
+                                    *ngIf="!addQuestionForm.get('answer')?.valid">*give option number</small>
+                            </label>
+                            <input type="number" class="form-control mb-2 mr-sm-2" id="answer"
+                                placeholder="Enter correct answer" formControlName="answer" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="marks" class="mr-sm-2">Marks &nbsp;&nbsp;
+                                <small id="emailHelp" class="form-text text-danger"
+                                    *ngIf="!addQuestionForm.get('marks')?.valid">*Please enter marks</small>
+                            </label>
+                            <input type="number" class="form-control mb-2 mr-sm-2" id="marks"
+                                placeholder="Enter correct answer" formControlName="marks" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 text-center">
+                            <button class="btn btn-primary m-2">
+                                Save 💾 
+                            </button>
+                            <button type="reset" class="btn btn-secondary  m-2">
+                                 Clear
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <button class="btn btn-success  m-2" (click)="submitQuiz()">
+                             Submit Quiz 🎡 
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+<hr>

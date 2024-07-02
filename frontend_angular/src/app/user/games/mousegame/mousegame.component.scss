@@ -1,0 +1,24 @@
+// @import "../../home-page/header/variable.header.component";
+.gameSpace{
+    width: 100%;
+}
+.mySpace{
+    border: 1px solid  black;
+    border-radius: 2rem;
+    height: 20rem;
+    width: 100%;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+}
+
+span{
+    margin: 1rem;
+    display: block;
+    border: 1px solid black;
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+
+    height: 5rem;
+   
+    // vertical-align: middle;
+
+
+}

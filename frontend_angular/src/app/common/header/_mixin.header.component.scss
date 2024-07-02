@@ -1,0 +1,37 @@
+@import "../header/variable.header.component";
+
+@mixin colour-effect() {
+    content:'';
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    z-index: -1;
+    background: linear-gradient(to right, darken($base-colour,2%),darken($base-colour,5%),darken($base-colour,10%),darken($base-colour,25%));
+}
+
+@mixin default-css() {
+    *{
+        margin: $default-mar-pad;
+        padding: $default-mar-pad;
+        box-sizing: border-box;
+        font-family: $default-font;
+    }
+    a{
+        text-decoration: none;
+    }
+    a:hover{
+        text-decoration: none;
+    }
+    li{
+        list-style: none;
+    }
+    p{
+        font-size: 1rem;
+        line-height: 1.6;
+        font-weight: 400;
+        color: #ffff;
+    }
+}
+

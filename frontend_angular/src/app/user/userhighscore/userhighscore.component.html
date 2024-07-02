@@ -1,0 +1,100 @@
+<br><button class="btn btn-info float-left" (click)="back()"> ◀Go
+    back</button><br><br>
+<h1><strong>{{quizName}}</strong></h1>
+<h2><strong>LEADERBOARD</strong></h2><br>
+<details>
+    <summary class="bg-info text-white"><strong>Your score</strong></summary><br>
+    <div>
+        <ng-template [ngIf]="myScore.length" [ngIfElse]="emptyList1">
+
+            <h3> My Score : {{myScore[0].score}}</h3>
+
+            <!-- <tr *ngFor="let my of myScore; index as i">
+               
+                <td class="text-center"><strong><h3>Score : {{myScore[0].score}}</h3></strong></td>
+                
+            </tr>
+
+            <h3>Score : {{my.score}}</h3> -->
+        </ng-template>
+        <ng-template #emptyList1>
+            <h2 class="text-center" [ngStyle]="{'color':'red'}">Please, Play a quiz first</h2>
+        </ng-template>
+    </div>
+</details><br><br>
+<details>
+    <summary class="bg-info text-white"><strong>Top scorers Of all time</strong></summary>
+
+
+
+   
+
+
+
+
+    <div>
+
+        <ng-template [ngIf]="userScore.length" [ngIfElse]="emptyList2">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th class="text-center">User name</th>
+                        <th class="text-center">Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let u of userScore; index as i">
+                        <td><strong>{{i+1}}</strong></td>
+                        <td class="text-center"><strong>{{u.name}}</strong></td>
+                        <td class="text-center"><strong>{{u.score}}</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-template>
+    
+
+
+
+        <!-- <ng-template [ngIf]="userScore.length" [ngIfElse]="emptyList2">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Position</th>
+                        <th class="text-center">User name</th>
+                        <th class="text-center">Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let u of userScore; index as i">
+                        <td><strong>{{i+1}}</strong></td>
+                        <td class="text-center"><strong>{{u.name}}</strong></td>
+                        <td class="text-center"><strong>{{u.score}}</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-template> -->
+        <ng-template #emptyList2>
+            <h2 class="text-center" [ngStyle]="{'color':'red'}">Sorry, No one has played the quiz yet</h2>
+        </ng-template>
+    </div>
+</details>
+
+<br>
+<hr>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
